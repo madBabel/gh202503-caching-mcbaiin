@@ -45,4 +45,10 @@ jobs:
         needs: 
             - test-build
         steps:         
-            - run: echo "test build"    
+            - run: echo "test build"
+            
+            - name: Download artifact
+              uses: actions/download-artifact@v4
+              with:
+                name: build-artifact
+                path: ./build
